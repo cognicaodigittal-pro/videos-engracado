@@ -5,251 +5,571 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Aprenda a criar vídeos engraçados e virais somente com o celular. Método simples e rápido.">
-    <title>Viralize com Vídeos Engraçados - Método Viral Video</title>
+        content="Aprenda a fazer Reels de humor que prendem atenção com estrutura e edição simples no celular.">
+    <meta name="theme-color" content="#4c1d95">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seusite.com/">
+    <meta property="og:title" content="Reels de Humor no Celular">
+    <meta property="og:description" content="Descubra a estrutura simples para criar Reels de humor que viralizam.">
+    <meta property="og:image" content="https://i.ibb.co/LhpR8KW7/Leandro.jpg">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://seusite.com/">
+    <meta property="twitter:title" content="Reels de Humor no Celular">
+    <meta property="twitter:description"
+        content="Descubra a estrutura simples para criar Reels de humor que viralizam.">
+    <meta property="twitter:image" content="https://i.ibb.co/LhpR8KW7/Leandro.jpg">
+
+    <title>Reels de Humor no Celular - Método Prático</title>
+
+    <style>
+        :root {
+            --bg-color: #050505;
+            --card-bg: #121212;
+            --text-primary: #ffffff;
+            --text-secondary: #a3a3a3;
+            --accent-purple: #8b5cf6;
+            --accent-glow: rgba(139, 92, 246, 0.5);
+            --success-color: #22c55e;
+            --button-gradient: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+            --button-hover: linear-gradient(135deg, #6d28d9 0%, #5b21b6 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.5;
+            background-image:
+                radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(76, 29, 149, 0.1) 0%, transparent 50%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 480px;
+            /* Mobile focused max-width */
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3 {
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            text-align: center;
+            background: linear-gradient(to right, #fff, #e9d5ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+        }
+
+        .font-bold {
+            font-weight: 700;
+        }
+
+        .text-accent {
+            color: var(--accent-purple);
+        }
+
+        /* Components */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 1rem;
+            background: var(--button-gradient);
+            color: white;
+            font-weight: 700;
+            font-size: 1.125rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            box-shadow: 0 0 20px var(--accent-glow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 1.5rem 0 0.5rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cta-button:active {
+            transform: scale(0.98);
+        }
+
+        .cta-button:hover {
+            box-shadow: 0 0 30px var(--accent-glow);
+            background: var(--button-hover);
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(139, 92, 246, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.1);
+            color: #d8b4fe;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .bullets {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .bullets li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .bullets li svg {
+            color: var(--success-color);
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+        }
+
+        .hero-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-purple);
+            box-shadow: 0 0 20px var(--accent-glow);
+            margin: 0 auto 1.5rem auto;
+            display: block;
+        }
+
+        .microtext {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+
+        /* Specific Sections */
+        .mistake-card {
+            background: rgba(239, 68, 68, 0.05);
+            /* Slight red tint for problems */
+            border-left: 3px solid #ef4444;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+        }
+
+        .step-list {
+            counter-reset: step;
+            margin-top: 1.5rem;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-item::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--accent-purple);
+            color: var(--accent-purple);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .step-title {
+            color: white;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .group-benefits {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .benefit-icon {
+            margin-right: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-question {
+            padding: 1rem;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            display: block;
+            /* For semantic ensuring */
+        }
+
+        .faq-answer {
+            padding: 0 1rem 1rem 1rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .secondary-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .secondary-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+            /* JS will handle visibility usually, but here simple css animation */
+        }
+
+        section:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        section:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        section:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- [1] Hero Section -->
-    <header class="hero-section" id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <span class="badge">E-book Exclusivo</span>
-                <h1 class="headline">Descubra Como Criar Vídeos <span class="highlight">Engraçados e Virais</span> Mesmo
-                    Sem Saber Editar</h1>
+    <div class="container">
 
-                <img src="book-cover.png" alt="Capa do E-book Como Editar Vídeos Engraçados" class="hero-image">
+        <!-- 1) HERO -->
+        <section style="text-align: center; margin-bottom: 3rem;">
+            <div class="badge">🎭 Tweets de Humor no Celular</div>
 
-                <p class="subheadline">
-                    Aprenda um método simples e rápido para transformar suas ideias em vídeos que fazem rir, prendem
-                    atenção e têm potencial de bombar nas redes, <strong>usando só o celular e apps gratuitos.</strong>
+            <img src="https://i.ibb.co/LhpR8KW7/Leandro.jpg" alt="Leandro" class="hero-image">
+
+            <h1>Como fazer Reels de humor que prendem atenção <br><span class="text-accent">(mesmo sem saber
+                    editar)</span></h1>
+
+            <p style="margin-top: 1rem; font-size: 1.1rem; color: #d4d4d4;">
+                Você não precisa ser muito criativo. Precisa de estrutura de humor + cortes certos pra aumentar retenção
+                e entrega.
+            </p>
+
+            <ul class="bullets" style="display: inline-block; text-align: left;">
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6" stroke="currentColor" stroke-width="3">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    Hook de 1 segundo
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6" stroke="currentColor" stroke-width="3">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    Setup + punchline (virada)
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6" stroke="currentColor" stroke-width="3">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    Edição simples no celular (apps grátis)
+                </li>
+            </ul>
+
+            <a href="https://chat.whatsapp.com/EXyeR7znsvwA67URqDw0C8?mode=gi_t" class="cta-button pulse"
+                target="_blank" rel="noopener noreferrer" aria-label="Entrar no Grupo de WhatsApp">
+                ✅ Entrar no Grupo e aprender na prática
+            </a>
+            <p class="microtext">Conteúdo prático + templates. Sem spam.</p>
+        </section>
+
+        <!-- 2) CONSCIENTIZAÇÃO -->
+        <section class="card">
+            <h2>Se seus Reels não passam de poucas views, quase sempre é isso:</h2>
+            <div style="margin-top: 1.5rem;">
+                <div class="mistake-card">🛑 Começo fraco (sem hook)</div>
+                <div class="mistake-card">🛑 Sem virada (sem punchline)</div>
+                <div class="mistake-card">🛑 Sem ritmo (cortes/legendas/pausas erradas)</div>
+            </div>
+            <p class="text-center" style="margin-top: 1rem; color: #fff;">
+                <strong>Humor não é dom. É estrutura repetível.</strong>
+            </p>
+        </section>
+
+        <!-- 3) MÉTODO -->
+        <section style="margin: 3rem 0;">
+            <h2>A estrutura simples que eu uso (e ensino)</h2>
+            <div class="step-list">
+                <div class="step-item">
+                    <span class="step-title">Hook (1s)</span>
+                    <span class="text-sm text-secondary">A primeira frase que para o scroll.</span>
+                </div>
+                <div class="step-item">
+                    <span class="step-title">Setup (2–4s)</span>
+                    <span class="text-sm text-secondary">Prepara o terreno para a piada.</span>
+                </div>
+                <div class="step-item">
+                    <span class="step-title">Punchline</span>
+                    <span class="text-sm text-secondary">A virada inesperada que gera o riso.</span>
+                </div>
+                <div class="step-item">
+                    <span class="step-title">Edição de Retenção</span>
+                    <span class="text-sm text-secondary">Cortes, legenda e ênfase para manter a atenção.</span>
+                </div>
+            </div>
+            <p class="text-center" style="font-style: italic; margin-top: 1rem;">
+                “Quando você acerta isso, o vídeo fica mais assistível e o Instagram entrega mais.”
+            </p>
+        </section>
+
+        <!-- 4) O QUE VOCÊ RECEBE -->
+        <section class="card"
+            style="background: linear-gradient(to bottom right, #121212, #1a1025); border-color: var(--accent-purple);">
+            <h2>Entrando no grupo, você recebe:</h2>
+            <div class="group-benefits">
+                <div class="benefit-item">
+                    <span class="benefit-icon">📝</span>
+                    Templates de roteiros de humor
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">✂️</span>
+                    Guia rápido de edição no celular
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">🔊</span>
+                    Sons e ideias pra adaptar
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">✅</span>
+                    Checklist de retenção
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">🔥</span>
+                    Desafios práticos
+                </div>
+            </div>
+
+            <a href="https://chat.whatsapp.com/EXyeR7znsvwA67URqDw0C8?mode=gi_t" class="cta-button" target="_blank"
+                rel="noopener noreferrer" style="margin-top: 2rem;">
+                ✅ Quero entrar no Grupo agora
+            </a>
+        </section>
+
+        <!-- 5) MINI FAQ -->
+        <section style="margin: 3rem 0;">
+            <h2 style="margin-bottom: 2rem;">Perguntas Frequentes</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">Preciso aparecer?</div>
+                <div class="faq-answer">Dá pra começar sem mostrar o rosto, usando narração e memes.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Preciso de PC?</div>
+                <div class="faq-answer">Não, você só precisa do seu celular e apps gratuitos.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">E se eu não for engraçado?</div>
+                <div class="faq-answer">Humor tem técnica. Usando estruturas replicáveis, qualquer um consegue.</div>
+            </div>
+        </section>
+
+        <!-- 6) CTA FINAL -->
+        <section style="text-align: center; margin-bottom: 4rem;">
+            <h2>Quer que eu te mostre isso na prática?</h2>
+            <a href="https://chat.whatsapp.com/EXyeR7znsvwA67URqDw0C8?mode=gi_t" class="cta-button pulse cta-large"
+                target="_blank" rel="noopener noreferrer">
+                ✅ Entrar no Grupo do WhatsApp
+            </a>
+
+            <div class="footer">
+                <p style="font-size: 0.8rem; opacity: 0.5;">
+                    &copy; 2024 Leandro Vienna. Todos os direitos reservados.
                 </p>
-
-                <!-- [2] Subheadline Reforço -->
-                <ul class="hero-benefits">
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-check-circle">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg> Mesmo que você nunca tenha editado nada antes</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-check-circle">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg> Mesmo que ache que não tem criatividade</li>
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-check-circle">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg> Mesmo que tenha vergonha de aparecer</li>
-                </ul>
-
-                <a href="#oferta" class="cta-button pulse">QUERO APRENDER A EDITAR AGORA</a>
+                <a href="https://youtube.com/@leandrovienna?si=MEDv4c_9rgNhwma1" class="secondary-link" target="_blank"
+                    rel="noopener noreferrer">
+                    📺 Canal de Entretenimento no YouTube
+                </a>
             </div>
-        </div>
-        <div class="hero-glow"></div>
-    </header>
+        </section>
 
-    <!-- [3] Storytelling Section -->
-    <section class="story-section">
-        <div class="container narrow">
-            <div class="story-card">
-                <h2>O Segredo não é a Criatividade...</h2>
-                <p><strong>Leandro</strong> tentou várias vezes editar vídeos, mas tudo saía esquisito ou sem graça.
-                    <br>Até que entendeu que o problema não era a criatividade, era a <strong>falta de
-                        estrutura</strong>.
-                </p>
+    </div>
 
-                <p>Ele criou um método simples e prático que qualquer pessoa consegue aplicar.</p>
-                <p class="highlight-text">Agora ele ensina isso no e-book que você está prestes a acessar.</p>
-            </div>
-        </div>
-    </section>
+    <script>
+        // Simple Event Tracking for Analytics
+        const trackEvent = (eventName, params = {}) => {
+            const eventData = {
+                event: eventName,
+                timestamp: new Date().toISOString(),
+                ...params
+            };
 
-    <!-- [4] What You'll Find -->
-    <section class="features-section">
-        <div class="container">
-            <h2 class="section-title">O que você vai descobrir</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="icon-box">📹</div>
-                    <h3>Método Prático de 4 Passos</h3>
-                    <p>Para editar vídeos engraçados em poucos minutos.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="icon-box">💡</div>
-                    <h3>Ideias Infinitas</h3>
-                    <p>Como transformar momentos simples do dia a dia em virais.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="icon-box">✂️</div>
-                    <h3>Truques de Edição</h3>
-                    <p>Cortes, sons e efeitos que aumentam o humor automaticamente.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="icon-box">📱</div>
-                    <h3>Ferramentas Gratuitas</h3>
-                    <p>Os melhores apps para editar direto no seu celular.</p>
-                </div>
-                <div class="feature-item feature-highlight">
-                    <div class="icon-box">🚀</div>
-                    <h3>Viralização Sem Fama</h3>
-                    <p>Como viralizar mesmo sem ter milhares de seguidores.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            // 1. Log to console (development/verification)
+            console.log('📝 Track Event:', eventName, eventData);
 
-    <!-- [5] Bonuses -->
-    <section class="bonus-section">
-        <div class="container">
-            <h2 class="section-title">Bônus Exclusivos</h2>
-            <p class="section-subtitle">Aceleradores de resultado incluídos gratuitamente:</p>
+            // 2. Persist to localStorage (simple persistence)
+            try {
+                const events = JSON.parse(localStorage.getItem('page_events') || '[]');
+                events.push(eventData);
+                localStorage.setItem('page_events', JSON.stringify(events));
+            } catch (e) {
+                console.warn('LocalStorage tracking failed', e);
+            }
 
-            <div class="bonus-grid">
-                <div class="bonus-card">
-                    <span class="bonus-tag">BÔNUS 1</span>
-                    <h3>Templates de Roteiros</h3>
-                    <p>Modelos prontos de vídeos engraçados pra você só copiar e colar.</p>
-                </div>
-                <div class="bonus-card">
-                    <span class="bonus-tag">BÔNUS 2</span>
-                    <h3>Pack de Sons Virais</h3>
-                    <p>30 sons e efeitos que todo vídeo de sucesso usa.</p>
-                </div>
-                <div class="bonus-card">
-                    <span class="bonus-tag">BÔNUS 3</span>
-                    <h3>Mini-aula CapCut</h3>
-                    <p>Tutorial passo a passo visual para iniciantes.</p>
-                </div>
-                <div class="bonus-card">
-                    <span class="bonus-tag">BÔNUS 4</span>
-                    <h3>Hashtags Secretas</h3>
-                    <p>A lista proibida para crescer rápido nas redes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            // 3. Placeholder for future pixels (Facebook/Google)
+            // if(window.fbq) fbq('track', eventName, params);
+            // if(window.gtag) gtag('event', eventName, params);
+        };
 
-    <!-- [6] Transformation -->
-    <section class="transformation-section">
-        <div class="container">
-            <div class="transformation-content">
-                <h2>O que vai mudar pra você?</h2>
-                <ul class="transformation-list">
-                    <li>✨ Aprender a criar vídeos engraçados com confiança.</li>
-                    <li>😂 Rir daquilo que antes te travava na edição.</li>
-                    <li>⚡ Fazer tudo de forma leve, produtiva e divertida.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+        // Track Page View
+        document.addEventListener('DOMContentLoaded', () => {
+            trackEvent('page_view', {
+                url: window.location.href,
+                referrer: document.referrer
+            });
+        });
 
-    <!-- [7] Social Proof -->
-    <section class="reviews-section">
-        <div class="container">
-            <h2 class="section-title">O que os alunos dizem</h2>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <p class="review-text">“Eu nunca tinha feito um vídeo na vida. Em 2 dias usando esse método, já
-                        postei 3
-                        vídeos e um deles pegou 14 mil views. E ainda me diverti!”</p>
-                    <div class="reviewer">
-                        <div class="avatar">LB</div>
-                        <div class="info">
-                            <strong>Larissa B.</strong>
-                            <span>Aluna do Método</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <p class="review-text">“Sempre achei que precisava de PC gamer pra editar. Fiz tudo no meu celular
-                        de 3 anos atrás e ficou top! O passo a passo é muito claro.”</p>
-                    <div class="reviewer">
-                        <div class="avatar">JM</div>
-                        <div class="info">
-                            <strong>João M.</strong>
-                            <span>Aluno do Método</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <p class="review-text">“O bônus de sons virais salvou meus vídeos. Minha retenção dobrou só com
-                        essas dicas de edição. Recomendo demais!”</p>
-                    <div class="reviewer">
-                        <div class="avatar">CS</div>
-                        <div class="info">
-                            <strong>Carol S.</strong>
-                            <span>Aluna do Método</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- [8] Call to Action / Offer -->
-    <section class="offer-section" id="oferta">
-        <div class="container">
-            <div class="offer-box">
-                <p class="offer-scarcity">🔥 Oferta por tempo limitado</p>
-                <h2>Garanta agora seu E-book + Bônus</h2>
-
-                <div class="price-container">
-                    <span class="price-old">De R$ 97,00</span>
-                    <span class="price-new">Por apenas <span class="big-price">R$ 29,90</span></span>
-                    <span class="installments">ou parcele no cartão</span>
-                </div>
-
-                <a href="#" class="cta-button cta-large pulse"
-                    onclick="alert('Link de checkout seria aberto aqui!')">QUERO APRENDER A EDITAR AGORA</a>
-
-                <div class="secure-badges">
-                    <span>🔒 Acesso Imediato</span>
-                    <span>💳 Pagamento Seguro</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- [9] Guarantee -->
-    <section class="guarantee-section">
-        <div class="container">
-            <div class="guarantee-box">
-                <div class="shield-icon">🛡️</div>
-                <div class="guarantee-text">
-                    <h3>Garantia Incondicional de 7 Dias</h3>
-                    <p>Se em até 7 dias você não aprender a editar com leveza e diversão, devolvemos 100% do seu
-                        dinheiro. Sem enrolação. Sem burocracia.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Método Vídeo Viral. Todos os direitos reservados.</p>
-            <p class="legal-links"><a href="#">Termos de Uso</a> | <a href="#">Políticas de Privacidade</a></p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+        // Track CTA Clicks
+        const ctaButtons = document.querySelectorAll('a[href*="chat.whatsapp.com"]');
+        ctaButtons.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                trackEvent('click_whatsapp_group', {
+                    position: index, // 0 = Hero, 1 = Middle, 2 = Bottom
+                    text: btn.innerText
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
